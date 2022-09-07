@@ -20,7 +20,7 @@ public class BaseServlet extends HttpServlet {
         //利用 this的机制-> "谁(哪个类的对象)调用我(this)所在的方法 我(this)就是谁(哪个类的对象)"
         //用this指代的类对象 获取它的类的字节码对象
         Class<? extends BaseServlet> thisServletClass = this.getClass();
-        //获取方法
+        //获取方法 ->getMethod 参数为  方法名 以及方法参数的字节码对象
         try {
             Method method = thisServletClass.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
             //执行方法 .invoke() 参数为: 1.谁(哪个对象)来执行 2.方法本身所需的参数
